@@ -10,7 +10,7 @@ pnpm add @ravenopsnet/ui
 
 Import `styles.css` in your base CSS file:
 
-```bash
+```css
 @import "@ravenopsnet/ui/styles.css";
 ```
 
