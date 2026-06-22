@@ -1,6 +1,6 @@
 {
   "name": "@ravenopsnet/ui",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Tree-shakeable React 19 component library built from the shadcn/ui component set.",
   "keywords": [
     "react",
