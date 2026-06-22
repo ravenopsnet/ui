@@ -52,7 +52,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/shadcn/components/ui/accordion"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -64,14 +64,14 @@ import {
   AlertDialogMedia,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
+} from "@/shadcn/components/ui/alert-dialog"
 import {
   Alert,
   AlertTitle,
   AlertDescription,
   AlertAction,
-} from "@/components/ui/alert"
-import { AspectRatio } from "@/components/ui/aspect-ratio"
+} from "@/shadcn/components/ui/alert"
+import { AspectRatio } from "@/shadcn/components/ui/aspect-ratio"
 import {
   Avatar,
   AvatarImage,
@@ -79,8 +79,8 @@ import {
   AvatarGroup,
   AvatarGroupCount,
   AvatarBadge,
-} from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
+} from "@/shadcn/components/ui/avatar"
+import { Badge } from "@/shadcn/components/ui/badge"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -88,10 +88,10 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { ButtonGroup } from "@/components/ui/button-group"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
+} from "@/shadcn/components/ui/breadcrumb"
+import { ButtonGroup } from "@/shadcn/components/ui/button-group"
+import { Button } from "@/shadcn/components/ui/button"
+import { Calendar } from "@/shadcn/components/ui/calendar"
 import {
   Card,
   CardHeader,
@@ -100,27 +100,27 @@ import {
   CardAction,
   CardDescription,
   CardContent,
-} from "@/components/ui/card"
+} from "@/shadcn/components/ui/card"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
-} from "@/components/ui/carousel"
+} from "@/shadcn/components/ui/carousel"
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
   ChartLegend,
   ChartLegendContent,
-} from "@/components/ui/chart"
-import { Checkbox } from "@/components/ui/checkbox"
+} from "@/shadcn/components/ui/chart"
+import { Checkbox } from "@/shadcn/components/ui/checkbox"
 import {
   Collapsible,
   CollapsibleTrigger,
   CollapsibleContent,
-} from "@/components/ui/collapsible"
+} from "@/shadcn/components/ui/collapsible"
 import {
   Combobox,
   ComboboxInput,
@@ -128,7 +128,7 @@ import {
   ComboboxList,
   ComboboxItem,
   useComboboxAnchor,
-} from "@/components/ui/combobox"
+} from "@/shadcn/components/ui/combobox"
 import {
   CommandDialog,
   CommandInput,
@@ -138,7 +138,7 @@ import {
   CommandItem,
   CommandShortcut,
   CommandSeparator,
-} from "@/components/ui/command"
+} from "@/shadcn/components/ui/command"
 import {
   ContextMenu,
   ContextMenuTrigger,
@@ -149,7 +149,7 @@ import {
   ContextMenuSub,
   ContextMenuSubTrigger,
   ContextMenuSubContent,
-} from "@/components/ui/context-menu"
+} from "@/shadcn/components/ui/context-menu"
 import {
   Dialog,
   DialogContent,
@@ -158,8 +158,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { DirectionProvider } from "@/components/ui/direction"
+} from "@/shadcn/components/ui/dialog"
+import { DirectionProvider } from "@/shadcn/components/ui/direction"
 import {
   Drawer,
   DrawerTrigger,
@@ -169,7 +169,7 @@ import {
   DrawerTitle,
   DrawerDescription,
   DrawerClose,
-} from "@/components/ui/drawer"
+} from "@/shadcn/components/ui/drawer"
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -182,7 +182,7 @@ import {
   DropdownMenuSub,
   DropdownMenuSubTrigger,
   DropdownMenuSubContent,
-} from "@/components/ui/dropdown-menu"
+} from "@/shadcn/components/ui/dropdown-menu"
 import {
   Empty,
   EmptyHeader,
@@ -190,7 +190,7 @@ import {
   EmptyDescription,
   EmptyContent,
   EmptyMedia,
-} from "@/components/ui/empty"
+} from "@/shadcn/components/ui/empty"
 import {
   Field,
   FieldLabel,
@@ -201,25 +201,25 @@ import {
   FieldSeparator,
   FieldSet,
   FieldContent,
-} from "@/components/ui/field"
+} from "@/shadcn/components/ui/field"
 import {
   HoverCard,
   HoverCardTrigger,
   HoverCardContent,
-} from "@/components/ui/hover-card"
-import { Input } from "@/components/ui/input"
+} from "@/shadcn/components/ui/hover-card"
+import { Input } from "@/shadcn/components/ui/input"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "@/components/ui/input-group"
+} from "@/shadcn/components/ui/input-group"
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
   InputOTPSeparator,
-} from "@/components/ui/input-otp"
+} from "@/shadcn/components/ui/input-otp"
 import {
   Item,
   ItemMedia,
@@ -229,9 +229,9 @@ import {
   ItemSeparator,
   ItemTitle,
   ItemDescription,
-} from "@/components/ui/item"
-import { Kbd, KbdGroup } from "@/components/ui/kbd"
-import { Label } from "@/components/ui/label"
+} from "@/shadcn/components/ui/item"
+import { Kbd, KbdGroup } from "@/shadcn/components/ui/kbd"
+import { Label } from "@/shadcn/components/ui/label"
 import {
   Menubar,
   MenubarMenu,
@@ -240,8 +240,11 @@ import {
   MenubarItem,
   MenubarSeparator,
   MenubarCheckboxItem,
-} from "@/components/ui/menubar"
-import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select"
+} from "@/shadcn/components/ui/menubar"
+import {
+  NativeSelect,
+  NativeSelectOption,
+} from "@/shadcn/components/ui/native-select"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -249,7 +252,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
+} from "@/shadcn/components/ui/navigation-menu"
 import {
   Pagination,
   PaginationContent,
@@ -258,28 +261,28 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination"
+} from "@/shadcn/components/ui/pagination"
 import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-} from "@/components/ui/popover"
-import { Progress } from "@/components/ui/progress"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+} from "@/shadcn/components/ui/popover"
+import { Progress } from "@/shadcn/components/ui/progress"
+import { RadioGroup, RadioGroupItem } from "@/shadcn/components/ui/radio-group"
 import {
   ResizablePanelGroup,
   ResizablePanel,
   ResizableHandle,
-} from "@/components/ui/resizable"
-import { ScrollArea } from "@/components/ui/scroll-area"
+} from "@/shadcn/components/ui/resizable"
+import { ScrollArea } from "@/shadcn/components/ui/scroll-area"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Separator } from "@/components/ui/separator"
+} from "@/shadcn/components/ui/select"
+import { Separator } from "@/shadcn/components/ui/separator"
 import {
   Sheet,
   SheetContent,
@@ -289,7 +292,7 @@ import {
   SheetTitle,
   SheetTrigger,
   SheetClose,
-} from "@/components/ui/sheet"
+} from "@/shadcn/components/ui/sheet"
 import {
   Sidebar,
   SidebarContent,
@@ -308,12 +311,12 @@ import {
   SidebarProvider,
   SidebarRail,
   SidebarTrigger,
-} from "@/components/ui/sidebar"
-import { Skeleton } from "@/components/ui/skeleton"
-import { Slider } from "@/components/ui/slider"
-import { Spinner } from "@/components/ui/spinner"
-import { Toaster } from "@/components/ui/sonner"
-import { Switch } from "@/components/ui/switch"
+} from "@/shadcn/components/ui/sidebar"
+import { Skeleton } from "@/shadcn/components/ui/skeleton"
+import { Slider } from "@/shadcn/components/ui/slider"
+import { Spinner } from "@/shadcn/components/ui/spinner"
+import { Toaster } from "@/shadcn/components/ui/sonner"
+import { Switch } from "@/shadcn/components/ui/switch"
 import {
   Table,
   TableBody,
@@ -321,16 +324,24 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Textarea } from "@/components/ui/textarea"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import { Toggle } from "@/components/ui/toggle"
+} from "@/shadcn/components/ui/table"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/shadcn/components/ui/tabs"
+import { Textarea } from "@/shadcn/components/ui/textarea"
+import {
+  ToggleGroup,
+  ToggleGroupItem,
+} from "@/shadcn/components/ui/toggle-group"
+import { Toggle } from "@/shadcn/components/ui/toggle"
 import {
   Tooltip,
   TooltipTrigger,
   TooltipContent,
-} from "@/components/ui/tooltip"
+} from "@/shadcn/components/ui/tooltip"
 
 // --- Fake Data for Analytics and Storefront ---
 const chartData = [
