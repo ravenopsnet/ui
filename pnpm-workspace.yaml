@@ -3,3 +3,9 @@ packages: []
 allowBuilds:
   esbuild: true
   msw: false
+
+minimumReleaseAgeExclude:
+  - "oxfmt"
+  - "@oxfmt/*"
+  - "oxlint"
+  - "@oxlint/*"

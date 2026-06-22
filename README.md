@@ -27,7 +27,26 @@ Import the component stylesheet once in your application entry point:
 import "@ravenopsnet/ui/styles.css"
 ```
 
-The stylesheet contains component utilities and Raven theme tokens. It does not bundle fonts or apply a global browser reset, body color, or document font.
+The stylesheet contains the compiled component utilities, Tailwind base styles,
+Raven theme tokens, and the light/dark global theme. Consumers do not need to
+redefine the shadcn theme.
+
+Inter is intentionally not embedded in the package stylesheet. Install and
+import it separately when you want the default Raven typography:
+
+```css
+@import "@fontsource-variable/inter";
+@import "@ravenopsnet/ui/styles.css";
+```
+
+Applications that also use Tailwind for their own source can keep their normal
+Tailwind import:
+
+```css
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@ravenopsnet/ui/styles.css";
+```
 
 ## Usage
 
@@ -91,7 +110,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
 ## Server rendering
 
-Interactive components preserve their `"use client"` boundaries for React Server Component frameworks. Import interactive components from a Client Component and keep event handlers and browser-only values on the client side.
+Server rendering is supported. In React Server Component frameworks, import
+the library from a Client Component and keep event handlers and browser-only
+values on the client side.
 
 ## Components
 

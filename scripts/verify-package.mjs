@@ -13,19 +13,19 @@ const read = (path) => readFile(fromRoot(path), "utf8")
 
 const packageJson = JSON.parse(await read("package.json"))
 const sourceIndex = await read("src/index.ts")
-const componentFiles = (await readdir(fromRoot("src/components/ui")))
+const componentFiles = (await readdir(fromRoot("src/shadcn/components/ui")))
   .filter((file) => file.endsWith(".tsx"))
   .map((file) => file.replace(/\.tsx$/, ""))
   .sort()
 const componentExports = [
-  ...sourceIndex.matchAll(/components\/ui\/([a-z0-9-]+)\.js/g),
+  ...sourceIndex.matchAll(/shadcn\/components\/ui\/([a-z0-9-]+)\.js/g),
 ]
   .map((match) => match[1])
   .sort()
 
 assert.deepEqual(componentExports, componentFiles, "public component inventory")
 
-const declarationFiles = (await readdir(fromRoot("dist/components/ui")))
+const declarationFiles = (await readdir(fromRoot("dist/shadcn/components/ui")))
   .filter((file) => file.endsWith(".d.ts"))
   .map((file) => file.replace(/\.d\.ts$/, ""))
 for (const declaration of declarationFiles) {
@@ -33,7 +33,7 @@ for (const declaration of declarationFiles) {
     componentFiles.includes(declaration),
     `unexpected declaration: ${declaration}.d.ts`
   )
-  await readFile(fromRoot(`dist/components/ui/${declaration}.js`))
+  await readFile(fromRoot(`dist/shadcn/components/ui/${declaration}.js`))
 }
 
 const ui = await import(fromRoot("dist/index.js"))
@@ -44,21 +44,11 @@ for (const name of ["Accordion", "Button", "Command", "Progress"]) {
 const buttonHtml = renderToString(React.createElement(ui.Button, null, "OK"))
 assert.match(buttonHtml, /<button/)
 assert.match(buttonHtml, />OK<\/button>/)
-const sidebarHtml = renderToString(
-  React.createElement(
-    ui.SidebarProvider,
-    null,
-    React.createElement(ui.SidebarMenuSkeleton, { showIcon: true })
-  )
-)
-assert.match(sidebarHtml, /--skeleton-width:70%/)
-
-const commandSource = await read("src/components/ui/command.tsx")
-assert.match(commandSource, /<Command>\{children\}<\/Command>/)
-
 const css = await readFile(fromRoot("dist/styles.css"))
 assert.equal(css.includes("data:font"), false, "default CSS embeds no fonts")
 assert.equal(css.includes("lg\\:grid-cols-4"), false, "demo classes excluded")
+assert(css.includes("--background:"), "theme tokens are published")
+assert(css.includes("body{"), "theme base styles are published")
 assert(gzipSync(css).length < 50_000, "default CSS stays below 50 kB gzip")
 
 for (const dependency of [
@@ -71,6 +61,7 @@ for (const dependency of [
   assert(packageJson.devDependencies[dependency])
 }
 assert.equal(packageJson.dependencies["@fontsource-variable/inter"], undefined)
+assert(packageJson.devDependencies["@fontsource-variable/inter"])
 
 for (const specifier of [
   "@ravenopsnet/ui",

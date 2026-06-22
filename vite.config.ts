@@ -1,4 +1,4 @@
-import { resolve } from "path"
+import { extname, resolve } from "path"
 import tailwindcss from "@tailwindcss/vite"
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
@@ -16,9 +16,34 @@ const runtimeDependencies = Object.keys(pkg.dependencies || {}).filter(
   (dependency) => !buildOnlyDependencies.has(dependency)
 )
 
+function addJavaScriptExtensions(content: string) {
+  return content.replace(
+    /(from\s+["']|import\s*\(\s*["'])(\.{1,2}\/[^"']+)(["'])/g,
+    (statement, prefix: string, specifier: string, suffix: string) =>
+      extname(specifier) ? statement : `${prefix}${specifier}.js${suffix}`
+  )
+}
+
+const prepareLibraryStyles = {
+  name: "prepare-library-styles",
+  enforce: "pre" as const,
+  apply: "build" as const,
+  transform(code: string, id: string) {
+    if (!id.endsWith("/src/index.css")) return
+
+    return code
+      .replace(
+        '@import "tailwindcss";',
+        '@import "tailwindcss" source(none);\n@source "./shadcn";'
+      )
+      .replace('@import "@fontsource-variable/inter";', "")
+  },
+}
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
+    prepareLibraryStyles,
     react(),
     tailwindcss(),
     // Automatically compiles your TypeScript declaration files (.d.ts)
@@ -30,6 +55,11 @@ export default defineConfig({
       entryRoot: resolve(__dirname, "src"),
       compilerOptions: {
         rootDir: resolve(__dirname, "."),
+      },
+      beforeWriteFile(filePath, content) {
+        if (!filePath.endsWith(".d.ts")) return
+
+        return { content: addJavaScriptExtensions(content) }
       },
     }),
   ],
