@@ -1,8 +1,11 @@
 {
   "name": "@ravenopsnet/ui",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "private": false,
+  "sideEffects": [
+    "**/*.css"
+  ],
   "files": [
     "dist"
   ],
@@ -12,9 +15,16 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     },
-    "./style.css": "./dist/index.css"
+    "./components/*": {
+      "types": "./dist/components/ui/*.d.ts",
+      "import": "./dist/components/ui/*.js",
+      "default": "./dist/components/ui/*.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./style.css": "./dist/styles.css"
   },
   "publishConfig": {
     "access": "public"
