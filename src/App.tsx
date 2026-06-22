@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { toast, Toaster } from "sonner"
+import { toast } from "sonner"
 import * as React from "react"
 import {
   Search,
@@ -312,6 +312,7 @@ import {
 import { Skeleton } from "@/components/ui/skeleton"
 import { Slider } from "@/components/ui/slider"
 import { Spinner } from "@/components/ui/spinner"
+import { Toaster } from "@/components/ui/sonner"
 import { Switch } from "@/components/ui/switch"
 import {
   Table,
@@ -3001,8 +3002,7 @@ export function App() {
               </div>
               <div className="flex items-center gap-4">
                 <span>Vite Dev Environment Active</span>
-                <span>Port: 5173</span>
-                <span className="font-mono text-[10px]">RAVEN UI v1.0.0</span>
+                <span>Local component showcase</span>
               </div>
             </footer>
           </SidebarInset>

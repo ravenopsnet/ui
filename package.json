@@ -1,6 +1,29 @@
 {
   "name": "@ravenopsnet/ui",
-  "version": "0.0.11",
+  "version": "0.0.12",
+  "description": "Tree-shakeable React 19 component library built from the shadcn/ui component set.",
+  "keywords": [
+    "react",
+    "components",
+    "design-system",
+    "shadcn",
+    "tailwindcss",
+    "ui"
+  ],
+  "author": "RavenOps Network",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravenopsnet/ui.git"
+  },
+  "homepage": "https://github.com/ravenopsnet/ui#readme",
+  "bugs": {
+    "url": "https://github.com/ravenopsnet/ui/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@11.2.2",
   "type": "module",
   "private": false,
   "sideEffects": [
