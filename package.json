@@ -46,8 +46,7 @@
       "import": "./dist/shadcn/components/ui/*.js",
       "default": "./dist/shadcn/components/ui/*.js"
     },
-    "./styles.css": "./dist/styles.css",
-    "./style.css": "./dist/styles.css"
+    "./styles.css": "./dist/styles.css"
   },
   "publishConfig": {
     "access": "public"

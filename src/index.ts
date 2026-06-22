@@ -1,8 +1,6 @@
 // packages/ui/src/index.ts
 import "./index.css"
 
-export type * from "./component-types.js"
-
 // Layout Primitives
 export * from "./shadcn/components/ui/sidebar.js"
 export * from "./shadcn/components/ui/resizable.js"
