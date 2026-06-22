@@ -11,10 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "./dialog.js"
-import {
-  InputGroup,
-  InputGroupAddon,
-} from "./input-group.js"
+import { InputGroup, InputGroupAddon } from "./input-group.js"
 import { SearchIcon, CheckIcon } from "lucide-react"
 
 function Command({

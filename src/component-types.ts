@@ -5,7 +5,10 @@ import type { Button } from "./components/ui/button.js"
 import type { Calendar } from "./components/ui/calendar.js"
 import type { ChartContainer } from "./components/ui/chart.js"
 import type { Checkbox } from "./components/ui/checkbox.js"
-import type { ComboboxContent, ComboboxInput } from "./components/ui/combobox.js"
+import type {
+  ComboboxContent,
+  ComboboxInput,
+} from "./components/ui/combobox.js"
 import type { Command, CommandDialog } from "./components/ui/command.js"
 import type { DialogContent } from "./components/ui/dialog.js"
 import type { DrawerContent } from "./components/ui/drawer.js"
